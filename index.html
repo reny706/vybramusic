@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VYBRA — Retro Music</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        VYBRA
+    </div>
+
+    <nav>
+
+        <a href="#inicio" class="active">
+            Inicio
+        </a>
+
+        <a href="#explorar">
+            Explorar
+        </a>
+
+        <a href="#generos">
+            Géneros
+        </a>
+
+        <a href="#novedades">
+            Novedades
+        </a>
+
+        <a href="#musica">
+            Mi música
+        </a>
+
+        <a href="#ajustes">
+            Ajustes
+        </a>
+
+    </nav>
+
+    <div class="nav-icons">
+        ⌕ ♡
+    </div>
+
+</header>
+
+
+<!-- =========================
+     INICIO
+========================= -->
+
+<section id="inicio">
+
+<div class="container hero">
+
+    <div class="tape"></div>
+
+    <div class="doodle">
+        good music<br>
+        better days ♡
+    </div>
+
+    <div class="star">
+        ✦
+    </div>
+
+
+    <div>
+
+        <div class="eyebrow">
+            VYBRA / 001 — PLAY YOUR VIBE
+        </div>
+
+        <h1>
+            Tu música,<br>
+            tu VYBRA.
+        </h1>
+
+        <p>
+            Una experiencia musical inspirada en los reproductores
+            que hicieron de escuchar música todo un ritual.
+        </p>
+
+        <div
+            class="song-list"
+            id="featured">
+        </div>
+
+    </div>
+
+
+    <!-- IPOD PRINCIPAL -->
+
+    <div>
+
+        <div class="ipod">
+
+            <div class="screen">
+
+                <div class="screen-top">
+
+                    <span>
+                        NOW PLAYING
+                    </span>
+
+                    <span>
+                        ▰
+                    </span>
+
+                </div>
+
+                <h3 id="currentSong">
+                    No One Noticed
+                </h3>
+
+                <p id="currentArtist">
+                    The Marías
+                </p>
+
+                <div class="progress">
+
+                    <i id="progressBar"></i>
+
+                </div>
+
+                <div class="controls">
+
+                    <span onclick="prevSong()">
+                        ◀
+                    </span>
+
+                    <span id="screenPlay">
+                        ▶
+                    </span>
+
+                    <span onclick="nextSong()">
+                        ▶
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="wheel">
+
+                <button
+                    class="menu"
+                    onclick="goHome()">
+                    MENU
+                </button>
+
+                <button
+                    class="prev"
+                    onclick="prevSong()">
+                    ◀◀
+                </button>
+
+                <button
+                    class="next"
+                    onclick="nextSong()">
+                    ▶▶
+                </button>
+
+                <div
+                    class="center"
+                    onclick="toggleAudio()">
+                </div>
+
+                <button
+                    class="play"
+                    onclick="toggleAudio()">
+                    ▶Ⅱ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PLAYER -->
+
+    <div>
+
+        <div class="player">
+
+            <span class="sticker">
+                MUSIC PLAYER
+            </span>
+
+            <div class="cover-big">
+
+                <img
+                    id="mainArtwork"
+                    src="img/no-one-noticed.jpg"
+                    alt="Portada">
+
+            </div>
+
+            <h3 id="playerSong">
+                No One Noticed
+            </h3>
+
+            <p id="playerArtist">
+                The Marías
+            </p>
+
+            <div class="player-controls">
+
+                <button onclick="prevSong()">
+                    ↶
+                </button>
+
+                <button
+                    id="playButton"
+                    onclick="toggleAudio()">
+                    ▶
+                </button>
+
+                <button onclick="nextSong()">
+                    ↷
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPLORAR
+========================= -->
+
+<section id="explorar">
+
+<div class="container">
+
+    <div class="intro">
+
+        <span class="sticker">
+            02. EXPLORE
+        </span>
+
+        <h2>
+            Tu colección
+        </h2>
+
+        <p>
+            Muévete por tus canciones como en un antiguo
+            Cover Flow. Elige una canción y déjala sonar.
+        </p>
+
+    </div>
+
+
+    <div class="ipod-stage">
+
+        <div class="tape"></div>
+
+
+        <div class="horizontal-ipod">
+
+
+            <div class="wide-screen">
+
+                <div class="wide-top">
+
+                    <span>
+                        VYBRA MUSIC
+                    </span>
+
+                    <span>
+                        ▰ 100%
+                    </span>
+
+                </div>
+
+
+                <div class="wide-content">
+
+                    <div class="wide-title">
+                        MÚSICA / COLLECTION
+                    </div>
+
+                    <div id="wideList"></div>
+
+
+                    <div class="now">
+
+                        <img
+                            id="wideArtwork"
+                            src="img/no-one-noticed.jpg"
+                            alt="Portada">
+
+                        <span id="wideSong">
+                            No One Noticed
+                        </span>
+
+                        <div class="mini-progress">
+
+                            <i id="wideProgress"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="horizontal-wheel">
+
+                <button
+                    class="top"
+                    onclick="goHome()">
+                    MENU
+                </button>
+
+                <button
+                    class="left"
+                    onclick="prevSong()">
+                    ◀◀
+                </button>
+
+                <button
+                    class="right"
+                    onclick="nextSong()">
+                    ▶▶
+                </button>
+
+                <div
+                    class="center"
+                    onclick="toggleAudio()">
+                </div>
+
+                <button
+                    class="bottom"
+                    onclick="toggleAudio()">
+                    ▶Ⅱ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     GÉNEROS
+========================= -->
+
+<section id="generos">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div>
+
+            <span class="sticker">
+                03. DISCOVER
+            </span>
+
+            <h2 class="section-title">
+                Explora por género
+            </h2>
+
+        </div>
+
+        <small>
+            CHOOSE YOUR VIBE →
+        </small>
+
+    </div>
+
+
+    <div class="genres">
+
+        <div class="genre">
+
+            <h3>
+                Indie
+            </h3>
+
+            <p>
+                The Marías · Clairo · Steve Lacy
+            </p>
+
+        </div>
+
+
+        <div class="genre">
+
+            <h3>
+                Alternativo
+            </h3>
+
+            <p>
+                Zoé · Tame Impala · Beach House
+            </p>
+
+        </div>
+
+
+        <div class="genre">
+
+            <h3>
+                Dream pop
+            </h3>
+
+            <p>
+                Slowdive · Men I Trust · Cocteau Twins
+            </p>
+
+        </div>
+
+
+        <div class="genre">
+
+            <h3>
+                Bedroom pop
+            </h3>
+
+            <p>
+                Clairo · beabadoobee · Laufey
+            </p>
+
+        </div>
+
+
+        <div class="genre">
+
+            <h3>
+                R&amp;B
+            </h3>
+
+            <p>
+                Frank Ocean · SZA · Cleo Sol
+            </p>
+
+        </div>
+
+
+        <div class="genre">
+
+            <h3>
+                Latino alternativo
+            </h3>
+
+            <p>
+                NSQK · Zoé · Bratty
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     NOVEDADES
+========================= -->
+
+<section id="novedades">
+
+<div class="container">
+
+    <div class="section-head">
+
+        <div>
+
+            <span class="sticker">
+                04. NEW IN
+            </span>
+
+            <h2 class="section-title">
+                Novedades
+            </h2>
+
+        </div>
+
+        <small>
+            FRESH SOUNDS →
+        </small>
+
+    </div>
+
+
+    <div
+        class="cards"
+        id="newCards">
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     MI MÚSICA
+========================= -->
+
+<section id="musica">
+
+<div class="container music-grid">
+
+
+    <div>
+
+        <span class="sticker">
+            05. MY MUSIC
+        </span>
+
+        <h2>
+            Lo que estás escuchando.
+        </h2>
+
+        <p class="smallcopy">
+            Una pequeña selección de tus reproducciones recientes.
+            Todo en un solo lugar, como en los viejos reproductores.
+        </p>
+
+    </div>
+
+
+    <div
+        class="music-list"
+        id="recentList">
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     AJUSTES
+========================= -->
+
+<section id="ajustes">
+
+<div class="container">
+
+
+    <div class="intro">
+
+        <span class="sticker">
+            06. SETTINGS
+        </span>
+
+        <h2>
+            Ajustes
+        </h2>
+
+        <p>
+            Personaliza tu pequeño reproductor
+            y hazlo más tuyo.
+        </p>
+
+    </div>
+
+
+
+    <div class="settings-ipod">
+
+        <div class="horizontal-ipod">
+
+
+            <div class="wide-screen">
+
+                <div class="wide-top">
+
+                    <span>
+                        SETTINGS
+                    </span>
+
+                    <span>
+                        VYBRA
+                    </span>
+
+                </div>
+
+
+                <div class="wide-content">
+
+                    <div class="wide-title">
+                        AJUSTES
+                    </div>
+
+
+                    <div class="wide-row active">
+
+                        <span class="dot"></span>
+
+                        Tema
+
+                        <span>
+                            Claro
+                        </span>
+
+                    </div>
+
+
+                    <div class="wide-row">
+
+                        <span class="dot"></span>
+
+                        Sonido
+
+                        <span>
+                            Música
+                        </span>
+
+                    </div>
+
+
+                    <div class="wide-row">
+
+                        <span class="dot"></span>
+
+                        Pantalla
+
+                        <span>
+                            Medio
+                        </span>
+
+                    </div>
+
+
+                    <div class="wide-row">
+
+                        <span class="dot"></span>
+
+                        Acerca de VYBRA
+
+                        <span>
+                            →
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="horizontal-wheel">
+
+                <button
+                    class="top"
+                    onclick="goHome()">
+                    MENU
+                </button>
+
+                <button
+                    class="left"
+                    onclick="prevSong()">
+                    ◀◀
+                </button>
+
+                <button
+                    class="right"
+                    onclick="nextSong()">
+                    ▶▶
+                </button>
+
+                <div
+                    class="center"
+                    onclick="toggleAudio()">
+                </div>
+
+                <button
+                    class="bottom"
+                    onclick="toggleAudio()">
+                    ▶Ⅱ
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="settings-options">
+
+
+        <div class="setting">
+
+            <b>
+                Color del iPod
+            </b>
+
+            <p>
+                Elige el color y se guardará automáticamente.
+            </p>
+
+
+            <div class="colors">
+
+                <button
+                    class="color-btn white active"
+                    data-color="white">
+                </button>
+
+                <button
+                    class="color-btn black"
+                    data-color="black">
+                </button>
+
+                <button
+                    class="color-btn pink"
+                    data-color="pink">
+                </button>
+
+                <button
+                    class="color-btn blue"
+                    data-color="blue">
+                </button>
+
+                <button
+                    class="color-btn purple"
+                    data-color="purple">
+                </button>
+
+                <button
+                    class="color-btn green"
+                    data-color="green">
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="setting">
+
+            <b>
+                Sonido
+            </b>
+
+            <p id="audioStatus">
+                Listo para reproducir música.
+            </p>
+
+        </div>
+
+
+        <div class="setting">
+
+            <b>
+                Interfaz
+            </b>
+
+            <p>
+                Estética retro, papel, stickers
+                y detalles inspirados en los 2000.
+            </p>
+
+        </div>
+
+
+        <div class="setting">
+
+            <b>
+                VYBRA
+            </b>
+
+            <p>
+                Una experiencia musical hecha
+                para descubrir nuevas vibes.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="logo">
+        VYBRA
+    </div>
+
+    <p>
+        Música que se siente. Una VYBRA a la vez.
+    </p>
+
+</footer>
+
+
+
+<audio
+    id="audio"
+    preload="metadata">
+</audio>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
